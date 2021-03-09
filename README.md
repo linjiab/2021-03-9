@@ -1,5 +1,6 @@
 ## 2021-03-9
 ##lcd 功能 按鍵控制
+、、、c++
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 byte smiley[8] = {
@@ -65,3 +66,4 @@ void loop() {
     lcd.scrollDisplayRight();
   }
 }
+、、、
