@@ -70,3 +70,44 @@ void loop() {
 }
 ```
 ![image](https://github.com/linjiab/2021-03-9/blob/main/3E064986-0BE1-498C-B987-608E0E0807D5.gif)
+```c++
+int x;
+void setup() {
+  // put your setup code here, to run once:
+
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(2, INPUT);
+  pinMode(3, INPUT);
+  Serial.begin(9600);
+
+}
+void motor(int x)
+{
+  analogWrite(5, x);
+  digitalWrite(6, 0);
+}
+void loop() {
+ 
+ if ( digitalRead(2) == LOW)
+  {
+    while (digitalRead(2) == LOW);
+    x = x + 35;
+  }
+  if (x >= 255){
+    x = 255;
+  }
+  motor(x);
+   if ( digitalRead(4) == LOW)
+  {
+    while (digitalRead(4) == LOW);
+    x = x - 35;
+  }
+  if (x <= 0){
+    x = 0;
+  }
+  if(x<=120)x=120;
+  motor(x);
+  Serial.println(x);
+}
+```
